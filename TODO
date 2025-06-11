@@ -1,0 +1,12 @@
+A faire pour chaque projet :
+
+- Header
+- -Wall -Wextra -Werror -std=c++98
+- Ecrire les noms de fichiers au format UpperCamelCase.cpp/hpp
+- La norminette (sauf les 25 lignes)
+- Forme canonique a partir du CPP02 sauf contre indication
+- toujours mettre "this" parce que c'est plus propre
+- les variables private sont precedes d'un _
+
+Video 42 :
+- 
