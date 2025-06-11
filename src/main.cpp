@@ -6,15 +6,16 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 13:01:15 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:46:25 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Animal.hpp"
 
 //Ne pas oublier la forme canonique ??
 
 //ex00
-//les constructeurs/des doivent afficher des messages qui leur sont propre
-//std::string type; EST PROTECTED
+
 //makesound dans Animal avec virtual (y compris pour Cat et Dog)
 
 //Ces deux classes dérivées doivent initialiser leur type en fonction de leur nom. Ainsi,
