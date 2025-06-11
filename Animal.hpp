@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 14:53:06 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:58:18 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Animal
 		virtual void makeSound(void) const;//const: ne peut modifier l'instance courante
 		
 		//Doit on egalement mettre getType et setType en virtual ? Ou meme de les reecrire dans Cat et Dog ?
-		//Le type que je veux modifier est celui present dans l'instance Animal.
+		//Le type que je veux modifier est celui present dans l'instance Animal
 		std::string	getType(void) const;//const: ne peut modifier l'instance courante
 		void setType(void);
-}
+};
 
 #endif

@@ -1,13 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 14:58:26 by aisidore         ###   ########.fr       */
+/*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
+/*   Updated: 2025/06/11 14:58:18 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef	DOG_HPP
+# define DOG_HPP
+
+# include <iostream>
+
+class Dog
+{
+	public:
+		Dog(void);
+		Dog(std::string type_);
+		Dog(const Dog &copy);
+		Dog	&operator=(const Dog &rhs);
+		~Dog(void);
+		virtual void makeSound(void) const;//const: ne peut modifier l'instance courante
+};
+
+#endif
