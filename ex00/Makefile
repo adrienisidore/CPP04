@@ -6,7 +6,7 @@
 #    By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/03 14:09:31 by aisidore          #+#    #+#              #
-#    Updated: 2025/06/11 14:18:14 by aisidore         ###   ########.fr        #
+#    Updated: 2025/06/11 18:44:07 by aisidore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = -Wall -Wextra -Werror -I. -std=c++98
 
 SRC = src/main.cpp src/Animal.cpp src/Cat.cpp src/Dog.cpp
 
-OBJ = objets/main.o objets/Fixed.o
+OBJ = objets/main.o objets/Animal.o objets/Cat.o objets/Dog.o
 
 all: $(NAME)
 

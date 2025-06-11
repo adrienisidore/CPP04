@@ -6,13 +6,13 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 14:46:25 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/11 19:05:07 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-
-//Ne pas oublier la forme canonique ??
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 //ex00
 
@@ -38,3 +38,24 @@
 //copies profondes ?
 
 //ex02 Animal devient AAnimal, une classe abstraite
+
+int	main(void)
+{
+	const Animal* meta = new Animal();
+	const Animal* i = new Dog();
+	const Animal* j = new Cat();
+
+	
+	std::cout << i->getType() << std::endl;
+	std::cout << j->getType() << std::endl;
+	meta->makeSound();
+	i->makeSound();
+	j->makeSound();
+	
+
+	//L'ordre importe peu je crois
+	delete i;
+	delete j;
+	delete meta;
+	return (0);
+}

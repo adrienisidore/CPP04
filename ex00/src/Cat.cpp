@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 14:19:04 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 14:45:52 by aisidore         ###   ########.fr       */
+/*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
+/*   Updated: 2025/06/11 19:03:52 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Animal::Animal(void) : type("random animal")
+Cat::Cat(void) : Animal()
 {
-	std::cout << "Animal default constructor called for " << this->type << std::endl;
+	this->type = "Cat";
+	std::cout << "Cat default constructor called for " << this->type << std::endl;
 }
 
-Animal::Animal(std::string type_) : type(type_)
+Cat::Cat(std::string type_) : Animal(type_)
 {
-	std::cout << "Animal default constructor called for " << this->type << std::endl;
+	std::cout << "Cat default constructor called for " << this->type << std::endl;
 }
 
-Animal::Animal(const Animal &copy) : type(copy.type)
+Cat::Cat(const Cat &copy) : Animal(copy)
 {
-	std::cout << "Animal copy constructor called for " << this->type << std::endl;	
+	std::cout << "Cat copy constructor called for " << this->type << std::endl;	
 }
 
-Animal	&Animal::operator=(const Animal &rhs)
+Cat	&Cat::operator=(const Cat &rhs)
 {
 	if (this != &rhs)
 	{
@@ -39,7 +40,12 @@ Animal	&Animal::operator=(const Animal &rhs)
 	return (*this);
 }
 
-Animal::~Animal(void)
+Cat::~Cat(void)
 {
-	std::cout << "Animal default destructor called for " << this->type << std::endl;
+	std::cout << "Cat default destructor called for " << this->type << std::endl;
+}
+
+void Cat::makeSound(void) const
+{
+	std::cout << "*meow! meow!*" << std::endl;
 }

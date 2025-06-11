@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	DOG_HPP
-# define DOG_HPP
+#ifndef	CAT_HPP
+# define CAT_HPP
 
-# include <iostream>
+# include "Animal.hpp"
 
-class Dog
+class Cat : public Animal
 {
 	public:
-		Dog(void);
-		Dog(std::string type_);
-		Dog(const Dog &copy);
-		Dog	&operator=(const Dog &rhs);
-		~Dog(void);
-		virtual void makeSound(void) const;//const: ne peut modifier l'instance courante
+		Cat(void);
+		Cat(std::string type_);
+		Cat(const Cat &copy);
+		Cat	&operator=(const Cat &rhs);
+		// ~Cat(void);
+		virtual ~Cat(void);
+		virtual void makeSound(void) const;
 };
 
 #endif
