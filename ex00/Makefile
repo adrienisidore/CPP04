@@ -6,7 +6,7 @@
 #    By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/03 14:09:31 by aisidore          #+#    #+#              #
-#    Updated: 2025/06/12 14:22:31 by aisidore         ###   ########.fr        #
+#    Updated: 2025/06/12 15:12:58 by aisidore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = animal
 
 FLAGS = -Wall -Wextra -Werror -I. -std=c++98
 
-SRC = src/main.cpp src/Animal.cpp src/Cat.cpp src/Kitten.cpp src/Dog.cpp
+SRC = src/main.cpp src/Animal.cpp src/WrongAnimal.cpp src/Cat.cpp src/WrongCat.cpp src/Kitten.cpp src/Dog.cpp
 
-OBJ = objets/main.o objets/Animal.o objets/Cat.o objets/Kitten.o objets/Dog.o
+OBJ = objets/main.o objets/Animal.o objets/WrongAnimal.o objets/Cat.o objets/WrongCat.o objets/Kitten.o objets/Dog.o
 
 all: $(NAME)
 

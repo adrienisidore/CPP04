@@ -6,20 +6,16 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 15:01:25 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 15:20:22 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include "Cat.hpp"
+#include "WrongCat.hpp"
 #include "Kitten.hpp"
 #include "Dog.hpp"
-
-//ex00
-
-//Verifier le polymorphisme avec une nouvelle classe WrongAnimal
-//Ecrire + de tests que ceux specifie dans le sujet
-
 
 //ex01
 
@@ -38,10 +34,15 @@ int	main(void)
 	const Animal* meta = new Animal();
 	const Animal* i = new Dog();
 	const Animal* j = new Cat();
-	const Animal* k;//const Animal* : je ne peux pas modifier le contenu pointe		Animal* const : le ptr lui meme est constant et doit etre initialise directement		const Animal* const : le contenu et le pointeur sont constants
-	//Je peux donc declarer k et lui attribuer une valeur plus tard (qui sera alors figee)
+	const Animal* k;
 	const Animal* const useless = new Cat();
-
+	//const Animal* : je ne peux pas modifier le contenu pointe
+	//Animal* const : le ptr lui meme est constant et doit etre initialise directement
+	//const Animal* const : le contenu et le pointeur sont constants
+	//Je peux donc declarer k et lui attribuer une valeur plus tard (qui sera alors figee)
+	WrongAnimal*	w_meta = new WrongAnimal();
+	WrongAnimal*	w_j = new WrongCat();
+	
 	(void)useless;
 	// useless.setType("Angry Cat");//impossible de modifier le contenu pointe (const Animal* ...)
 	// delete useless;
@@ -53,19 +54,22 @@ int	main(void)
 	std::cout << "k is a " << k->getType() << std::endl;
 	std::cout << i->getType() << std::endl;
 	std::cout << j->getType() << std::endl;
-
+	std::cout << w_j->getType() << std::endl;
 	
 	meta->makeSound();
+	w_meta->makeSound();
 	i->makeSound();
 	j->makeSound();
+	w_j->makeSound();
 	k->makeSound();
 	
-
 	//L'ordre importe peu
 	delete i;
 	delete j;
+	delete w_j;
 	delete k;
 	delete meta;
+	delete w_meta;
 	delete useless;
 
 	
