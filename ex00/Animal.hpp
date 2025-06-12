@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 18:56:34 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:57:52 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ class Animal
 		Animal(std::string type_);
 		Animal(const Animal &copy);
 		Animal	&operator=(const Animal &rhs);
-		// ~Animal(void);
-		virtual ~Animal(void);
+		virtual ~Animal(void);//LE DESTRUCTEUR DU PARENT DOIT AUSSI ETRE VIRTUAL
 		virtual void makeSound(void) const;//const: ne peut modifier l'instance courante
 		
 		//Doit on egalement mettre getType et setType en virtual ? Ou meme de les reecrire dans Cat et Dog ?

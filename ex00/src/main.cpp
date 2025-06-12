@@ -6,25 +6,19 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 19:05:07 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 15:01:25 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
+#include "Kitten.hpp"
 #include "Dog.hpp"
 
 //ex00
 
-//makesound dans Animal avec virtual (y compris pour Cat et Dog)
-
-//Ces deux classes dérivées doivent initialiser leur type en fonction de leur nom. Ainsi,
-// le type de Dog sera “Dog”, et celui de Cat sera “Cat”. ???
-
 //Verifier le polymorphisme avec une nouvelle classe WrongAnimal
 //Ecrire + de tests que ceux specifie dans le sujet
-
-//Penser a delete Dog, Cat et Animal (dans le bon ordre?)
 
 
 //ex01
@@ -44,18 +38,36 @@ int	main(void)
 	const Animal* meta = new Animal();
 	const Animal* i = new Dog();
 	const Animal* j = new Cat();
+	const Animal* k;//const Animal* : je ne peux pas modifier le contenu pointe		Animal* const : le ptr lui meme est constant et doit etre initialise directement		const Animal* const : le contenu et le pointeur sont constants
+	//Je peux donc declarer k et lui attribuer une valeur plus tard (qui sera alors figee)
+	const Animal* const useless = new Cat();
 
-	
+	(void)useless;
+	// useless.setType("Angry Cat");//impossible de modifier le contenu pointe (const Animal* ...)
+	// delete useless;
+	// useless = new Dog();//impossible de modifier le ptr lui meme (...Animal* const)
+	if (j->getType() == "Cat")
+		k = new Kitten();
+	else
+		k = new Dog();
+	std::cout << "k is a " << k->getType() << std::endl;
 	std::cout << i->getType() << std::endl;
 	std::cout << j->getType() << std::endl;
+
+	
 	meta->makeSound();
 	i->makeSound();
 	j->makeSound();
+	k->makeSound();
 	
 
-	//L'ordre importe peu je crois
+	//L'ordre importe peu
 	delete i;
 	delete j;
+	delete k;
 	delete meta;
+	delete useless;
+
+	
 	return (0);
 }
