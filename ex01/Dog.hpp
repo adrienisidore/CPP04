@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 13:59:31 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 17:26:48 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -26,6 +27,8 @@ class Dog : public Animal
 		// virtual ~Dog(void);//NECESSAIRE SI CHiot herite de Dog ?
 		// virtual void makeSound(void) const;
 		void makeSound(void) const;
+	private:
+		Brain*	brain;
 };
 
 #endif

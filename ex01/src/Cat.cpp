@@ -6,15 +6,17 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 19:03:52 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 17:29:06 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat(void) : Animal()
 {
 	this->type = "Cat";
+	this->brain = new Brain();
 	std::cout << "Cat default constructor called for " << this->type << std::endl;
 }
 
@@ -42,6 +44,7 @@ Cat	&Cat::operator=(const Cat &rhs)
 
 Cat::~Cat(void)
 {
+	delete this->brain;
 	std::cout << "Cat default destructor called for " << this->type << std::endl;
 }
 

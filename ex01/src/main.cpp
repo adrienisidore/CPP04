@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 15:20:22 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 16:15:37 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,19 @@
 
 //checker les leaks
 
-//copies profondes ?
+//copies profondes : recreer une nouvelle adresse memoire et copier tous les elements dedans. Si je delete l'un alors l'autre reste valide
+//copie superficielle : copier simplement le pointeur. on a donc 2 objets qui pointent vers la meme chose. Si je delete l'un alors l'autre est invalide
+// class A {
+//     int* ptr;
+// };
+// A a;
+// A b = a; // copie superficielle. a et b pointent vers la meme instance A.
+
+// A::A(const A& other) {
+//     ptr = new int(*other.ptr); // copie profonde : alloue une nouvelle case et copie la valeur
+// }
+// A c(a);//A c = a; fait appel a l'operateur de copie par convention C++
+
 
 //ex02 Animal devient AAnimal, une classe abstraite
 

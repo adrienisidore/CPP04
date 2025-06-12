@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 15:21:33 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 15:22:35 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 15:58:43 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@
 
 class Brain
 {
-	std::string 	
+	public:
+		Brain(void);
+		Brain(std::string *ideas_);
+		Brain(const Brain &copy);
+		Brain	&operator=(const Brain &rhs);
+		std::string ideas[100];	
 };
 
 #endif

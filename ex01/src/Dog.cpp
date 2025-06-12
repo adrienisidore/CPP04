@@ -6,15 +6,17 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 19:03:41 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 17:29:13 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog(void) : Animal()
 {
 	this->type = "Dog";
+	this->brain = new Brain();
 	std::cout << "Dog default constructor called for " << this->type << std::endl;
 }
 
@@ -42,6 +44,7 @@ Dog	&Dog::operator=(const Dog &rhs)
 
 Dog::~Dog(void)
 {
+	delete this->brain;
 	std::cout << "Dog default destructor called for " << this->type << std::endl;
 }
 

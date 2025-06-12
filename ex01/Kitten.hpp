@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 14:18:51 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/06/12 17:27:08 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define KITTEN_HPP
 
 # include "Cat.hpp"
-
+//Ne possede pas de Brain car c'est un attribut prive de Cat
 class Kitten : public Cat
 {
 	public:
