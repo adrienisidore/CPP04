@@ -10,6 +10,10 @@ A faire pour chaque projet :
 - les variables private sont precedes d'un _
 
 Video 42 :
+
+
+                                    CPP00
+
 - definir par ft() const; fonction MEMBRE constante qui NE MODIFIE PAS l'instance courante. Les getter sont des ft() const;.
 
 - const ptr* : le contenu pointe ne peut pas etre modifie via ce ptr (le pointeur peut pointer vers autre chose) / ptr* const : le pointeur doit etre declare et initialise (à NULL par ex), valeur modifiable mais pointeur non modifiable (le pointeur pointera uniquement vers cette adresse)       / const ptr* const : ni le contenu ni le pointeur ne pourront etre change
@@ -37,7 +41,6 @@ int main() {
     std::cout << aire(rect) << std::endl;  // Affiche 15
 }
 
-
 -Attribut membre : propre à une instance / const Attribut : comme en C, doit etre definit dans l'initialization list.
 -Attribut non-membre : indépendant, non influencé par les constructeurs/des.
 
@@ -55,11 +58,6 @@ class Compteur {
 // Initialisation de l'attribut statique
 int Compteur::nbInstances = 0;
 //Par définition une fct static ne peut pas accéder à this
-
--STACK : on ne retourne jamais la référence/pointeur d'une variable créé localement dans une fonction, on utilise la heap.
-SAUF SI ON EST DANS LE MAIN alors on peut tout faire en local et travailler avec les références/pointeurs dans les fonctions.
-- Polymorphisme : je dois utiliser new (heap)
-
 
     EXEMPLE POUR RECUPERER L'ADRESSE D'UN ATTRIBUT/D'UNE FONCTION DANS UNE INSTANCE
                                     En 3 ETAPES
@@ -84,4 +82,60 @@ void (Sample::*ptr_bar)();//une fonction de type void, sans args
 ptr_bar = &Sample::bar;
 (instance.*ptr_bar)();
 (instancep->*ptr_bar)();
+
+
+
+                                            CPP01
+
+
+-STACK : on ne retourne jamais la référence/pointeur d'une variable créé localement dans une fonction, on utilise la heap.
+SAUF SI ON EST DANS LE MAIN alors on peut tout faire en local et travailler avec les références/pointeurs dans les fonctions.
+- REFERENCE : s'initialise dès sa délcaration int a = 5; int& ref = a;
+
+
+
+
+                                            CPP02
+[.hpp]
+class	Fixed
+{
+	public:
+		Fixed(void);//Constructeur par defaut
+		Fixed(const Fixed &copy);//Fixed b(a);
+		Fixed	&operator=(const Fixed &rhs);
+		~Fixed(void);//Destructeur par defaut
+};
+
+[.cpp]
+Fixed::Fixed(void) : _n(0), _bits(8)
+{
+	std::cout << "Fixed default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const Fixed &copy) : _n(copy._n), _bits(copy._bits)
+{
+	std::cout << "Fixed copy constructor called" << std::endl;
+}
+
+Fixed	&Fixed::operator=(const Fixed &rhs)
+{
+	//Si this different de l'adresse de la référence
+	if (this != &rhs)
+	{
+        ...
+	}
+	else
+		std::cout << "Assignment operator called, but useless" << std::endl;
+	return (*this);
+}
+
+
+
+                                            CPP03
+
+
+- Polymorphisme : je dois utiliser new (heap). new appel le constructeur, delete le destructeur
+
+
+
 
