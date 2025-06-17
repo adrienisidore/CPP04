@@ -56,4 +56,8 @@ class Compteur {
 int Compteur::nbInstances = 0;
 //Par définition une fct static ne peut pas accéder à this
 
+-STACK : on ne retourne jamais la référence/pointeur d'une variable créé localement dans une fonction, on utilise la heap.
+SAUF SI ON EST DANS LE MAIN alors on peut tout faire en local et travailler avec les références/pointeurs dans les fonctions.
+- Polymorphisme : je dois utiliser new (heap)
+
 
