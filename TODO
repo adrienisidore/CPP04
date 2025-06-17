@@ -129,7 +129,8 @@ Fixed	&Fixed::operator=(const Fixed &rhs)
 	return (*this);
 }
 
-
+NB : Si dans main je fais Fixed a = b; ca appel el constructeur de copie (Fixed a(b))
+mais si je fais Fixed a; a = b; alors ca appel l'opérateur =.
 
                                             CPP03
 
