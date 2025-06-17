@@ -2,12 +2,58 @@ A faire pour chaque projet :
 
 - Header
 - -Wall -Wextra -Werror -std=c++98
-- Ecrire les noms de fichiers au format UpperCamelCase.cpp/hpp
+- Ecrire les noms de fichiers au format UpperCamelCase.cpp/hpp (".class.cpp/hpp)
+- Utiliser les listes d'initialisation quand c'est possible
 - La norminette (sauf les 25 lignes)
 - Forme canonique a partir du CPP02 sauf contre indication
 - toujours mettre "this" parce que c'est plus propre
 - les variables private sont precedes d'un _
 
 Video 42 :
-- definir par ft() const; les fonctions qui ne modifient pas instance courante
-- const ptr* : le contenu pointe ne peut pas etre modifie / ptr* const : le pointeur doit etre declare et initialise        / const ptr* const : ni le contenu ni le pointeur ne pourront etre change
+- definir par ft() const; fonction MEMBRE constante qui NE MODIFIE PAS l'instance courante. Les getter sont des ft() const;.
+
+- const ptr* : le contenu pointe ne peut pas etre modifie via ce ptr (le pointeur peut pointer vers autre chose) / ptr* const : le pointeur doit etre declare et initialise (à NULL par ex), valeur modifiable mais pointeur non modifiable (le pointeur pointera uniquement vers cette adresse)       / const ptr* const : ni le contenu ni le pointeur ne pourront etre change
+
+- ft(MaClasse obj) : j'envoie une copie donc le constructeur de copie est appelé.
+A la fin de l'exec, le destructeur par défaut est appelé uniquement par cette copie
+- ft(MaClasse* ptr) : je modifie l'objet original donc pas de con/destructeur appelés
+- ft(MaClasse& ref) : idem
+
+- Si j'ai pas de copy constructor dans mon code alors le compilateur en génère un qui n'est adapté qu'aux attributs facilement copiable (std//string, int etc ...)
+
+-Fonction membre : prototype définit à l'intérieur d'une classe, elle peut modifier (this)/observer les attributs de cette classe.
+-Fonction non-membre : définie en dehors d'une classe, elle peut techniquement observer les attributs PUBLIQUES d'une instance si on les rentre en paramètres. Elle prend juste des paramètres et s'exécute, comme en C.
+class Rectangle {
+public:
+    int largeur, hauteur;
+    Rectangle(int l, int h) : largeur(l), hauteur(h) {}
+};
+// Fonction non-membre pour calculer l’aire
+int aire(const Rectangle& r) {
+    return r.largeur * r.hauteur;
+}
+int main() {
+    Rectangle rect(5, 3);
+    std::cout << aire(rect) << std::endl;  // Affiche 15
+}
+
+
+-Attribut membre : propre à une instance / const Attribut : comme en C, doit etre definit dans l'initialization list.
+-Attribut non-membre : indépendant, non influencé par les constructeurs/des.
+
+- Une fonction membre peut accéder aux attributs de classe (static), mais si je veux que cette fonction ne serve qu'à ça alors je définis une fonction MEMBRE static :
+class Compteur {
+    public:
+        static int nbInstances;  // attribut de classe partagé entre toutes les instances
+        Compteur() {
+            nbInstances++;
+        }
+        static int getNbInstances() {  // ✅ fonction membre statique
+            return nbInstances;
+        }
+};
+// Initialisation de l'attribut statique
+int Compteur::nbInstances = 0;
+//Par définition une fct static ne peut pas accéder à this
+
+
