@@ -61,3 +61,27 @@ SAUF SI ON EST DANS LE MAIN alors on peut tout faire en local et travailler avec
 - Polymorphisme : je dois utiliser new (heap)
 
 
+    EXEMPLE POUR RECUPERER L'ADRESSE D'UN ATTRIBUT/D'UNE FONCTION DANS UNE INSTANCE
+                                    En 3 ETAPES
+
+J'ai une instance de type Sample, et je veux récupérer l'adresse d'un attribut int foo, et d'une fonction membre nommée bar.
+
+ETAPE 1:
+Sample  instance;//constructeur par défaut s'enclenche
+Sample* instancep; //un pointeur qui peut contenir l'adresse d'une instance Sample
+instancep = &instance;
+ETAPE 2:
+int Sample::*ptr_foo = NULL; //un pointeur qui récupère un int contenu dans une instance Sample (nullptr fait forcément réf à un pointeur NULL, alors que NULL peut faire réf à 0)
+Pas obligé d'initialiser à nullptr mais bonne pratique.
+ETAPE 3:
+ptr_foo = &Sample::foo;//prêt à récupérer l'adresse du membre foo d'une instance
+int hello = instance.*ptr_foo;
+int hello = instancep->*ptr_foo;
+
+
+POUR UNE FONCTION :
+void (Sample::*ptr_bar)();//une fonction de type void, sans args
+ptr_bar = &Sample::bar;
+(instance.*ptr_bar)();
+(instancep->*ptr_bar)();
+
