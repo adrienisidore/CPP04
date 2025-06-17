@@ -145,7 +145,33 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {}
 
                                             CPP04
 - Polymorphisme : je dois utiliser new (heap). new appel le constructeur, delete le destructeur
+- A l'héritage le constructeur parent se lance avant le constructeur enfant
+
+- Un attribut protected n'est utilisable que par la classe en question et ses enfants, pas le main()
+- Si je fais class Cat : public Animal alors j'hérite des public et protected (pas private)
+Dans ces 2 cas là le main() n'a pas accès aux attributs hérités de Animal depuis Cat :
+- Si je fais class Cat : protected Animal alors les attributs public et protected deviennent protected
+- Si je fais class Cat : private Animal tout devient private, les héritants de Cat ne pourront pas y accéder
+
+Je peux déclarer Cat, Kitten ou Dog en pointeur Animal* et avoir accès au bon
+makeSound. Un bonne pratique est de réécrire virtual pour les héritants meme si c'est
+pas obligatoire.
+virtual ~Animal(void);//LE DESTRUCTEUR DOIT AUSSI ETRE virtual
+virtual void makeSound(void) const;
 
 
+Interface qui oblige toutes les classes enfants à avoir ces fonctions dans leurs attributs. Une interface ne peut pas avoir d'attributs 
+Class ICoffeMaker
+{
+   void  Sayhello(std::string hi) = 0;
+   int Sometri(int tri) = 0;
+}
+
+Une classe abstraite c'est comme une interface mais lorsque certainq attributs/fonctions sont concrets (pas =0 et on les a implémenté dans un .cpp)
+
+
+COMMENT COMPILER CODE SIMPLEMENT POUR LE TESTER EN EXAM ? COMME CA ?
+
+c++ -Wall -Wextra -Werror -I. -std=c++98 ... animal
 
 
