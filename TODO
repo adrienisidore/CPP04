@@ -129,12 +129,21 @@ Fixed	&Fixed::operator=(const Fixed &rhs)
 	return (*this);
 }
 
-NB : Si dans main je fais Fixed a = b; ca appel el constructeur de copie (Fixed a(b))
+NB : Si dans main je fais Fixed a = b; ca appel le constructeur de copie (Fixed a(b))
 mais si je fais Fixed a; a = b; alors ca appel l'opérateur =.
 
                                             CPP03
+Quand on crée ScavTrap ca fait d'abord appel au constructeur parent
+[.hpp]
+class ScavTrap : public ClapTrap
+{ ... }
 
+[.cpp]
+ScavTrap::ScavTrap(void) : ClapTrap() {}
+ScavTrap::ScavTrap(std::string	name) : ClapTrap(name) {}
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {}
 
+                                            CPP04
 - Polymorphisme : je dois utiliser new (heap). new appel le constructeur, delete le destructeur
 
 
