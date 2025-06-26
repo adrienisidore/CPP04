@@ -13,6 +13,10 @@
 #ifndef	KITTEN_HPP
 # define KITTEN_HPP
 
+
+//Classe abstraite : j'oblige que certaines fonctions a etre redefinies'
+//Interface : je suis oblige d'avoir toutes les fonctions qui ont = 0 ?
+
 # include "Cat.hpp"
 //Ne possede pas de Brain car c'est un attribut prive de Cat
 class Kitten : public Cat

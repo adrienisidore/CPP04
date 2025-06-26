@@ -22,7 +22,7 @@ class Brain
 		Brain(std::string *ideas_);
 		Brain(const Brain &copy);
 		Brain	&operator=(const Brain &rhs);
-		std::string ideas[100];	
+		std::string ideas[100];//protected ????
 };
 
 #endif
