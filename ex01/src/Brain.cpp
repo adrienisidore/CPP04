@@ -46,7 +46,7 @@ Brain	&Brain::operator=(const Brain &rhs)
 		// this->ideas = rhs.ideas;
 		i = -1;
 		while (++i < 100)
-			this->ideas[i] = rhs.ideas[i];
+			this->ideas[i] = rhs.ideas[i];//Copie profonde ???
 		//La pre-incrementation n'est effectuee qu'apres l'execution du code entre parentheses (idem pour post)
 		//CONTRAIREMENT AU while
 		// for (int i = 0; i < 100; ++i)
