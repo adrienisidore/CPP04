@@ -18,7 +18,7 @@ Dog::Dog(void) : Animal()
 	std::cout << "Dog default constructor called for " << this->type << std::endl;
 }
 
-Dog::Dog(std::string type_) : Animal(type_)
+Dog::Dog(std::string const type_) : Animal(type_)
 {
 	std::cout << "Dog default constructor called for " << this->type << std::endl;
 }
@@ -32,7 +32,8 @@ Dog	&Dog::operator=(const Dog &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << "Assignment operator called : " << this->type << "becomes " << rhs.type << std::endl;
+		std::cout << "Assignment operator called : "
+		<< this->type << "becomes " << rhs.type << std::endl;
 		this->type = rhs.type;
 	}
 	else

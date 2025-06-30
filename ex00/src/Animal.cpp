@@ -17,7 +17,7 @@ Animal::Animal(void) : type("random animal")
 	std::cout << "Animal default constructor called for " << this->type << std::endl;
 }
 
-Animal::Animal(std::string type_) : type(type_)
+Animal::Animal(std::string const type_) : type(type_)
 {
 	std::cout << "Animal default constructor called for " << this->type << std::endl;
 }
@@ -31,7 +31,8 @@ Animal	&Animal::operator=(const Animal &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << "Assignment operator called : " << this->type << "becomes " << rhs.type << std::endl;
+		std::cout << "Assignment operator called : " << this->type
+		<< "becomes " << rhs.type << std::endl;
 		this->type = rhs.type;
 	}
 	else
@@ -49,12 +50,14 @@ void Animal::makeSound(void) const
 	std::cout << "*make animal noise*" << std::endl;
 }
 
+//Ne vaut-il pa mieux renvoyer une référence ?
+//Dans les autres CPP je renvoie aussi une copie
 std::string	Animal::getType(void) const
 {
 	return (this->type);
 }
 
-void Animal::setType(std::string typ)
+void Animal::setType(std::string const typ)
 {
 	this->type = typ;
 }

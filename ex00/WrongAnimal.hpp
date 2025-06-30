@@ -21,16 +21,14 @@ class WrongAnimal
 		std::string	type;
 	public:
 		WrongAnimal(void);
-		WrongAnimal(std::string type_);
+		WrongAnimal(std::string const type_);
 		WrongAnimal(const WrongAnimal &copy);
-		WrongAnimal	&operator=(const WrongAnimal &rhs);
-		virtual ~WrongAnimal(void);//LE DESTRUCTEUR DU PARENT DOIT AUSSI ETRE VIRTUAL
-		virtual void makeSound(void) const;//const: ne peut modifier l'instance courante
+		WrongAnimal		&operator=(const WrongAnimal &rhs);
+		~WrongAnimal(void);
+		void	makeSound(void) const;
 		
-		//Doit on egalement mettre getType et setType en virtual ? Ou meme de les reecrire dans Cat et Dog ?
-		//Le type que je veux modifier est celui present dans l'instance WrongAnimal
-		std::string	getType(void) const;//const: ne peut modifier l'instance courante
-		void setType(std::string typ);
+		std::string		getType(void) const;
+		void			setType(std::string const typ);
 };
 
 #endif

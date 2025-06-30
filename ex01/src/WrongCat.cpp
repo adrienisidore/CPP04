@@ -18,7 +18,7 @@ WrongCat::WrongCat(void) : WrongAnimal()
 	std::cout << "WrongCat default constructor called for " << this->type << std::endl;
 }
 
-WrongCat::WrongCat(std::string type_) : WrongAnimal(type_)
+WrongCat::WrongCat(std::string const type_) : WrongAnimal(type_)
 {
 	std::cout << "WrongCat default constructor called for " << this->type << std::endl;
 }

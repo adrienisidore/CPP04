@@ -20,7 +20,7 @@ Dog::Dog(void) : Animal()
 	std::cout << "Dog default constructor called for " << this->type << std::endl;
 }
 
-Dog::Dog(std::string type_) : Animal(type_)
+Dog::Dog(std::string const type_) : Animal(type_)
 {
 	std::cout << "Dog default constructor called for " << this->type << std::endl;
 }

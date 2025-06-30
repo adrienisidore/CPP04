@@ -17,7 +17,7 @@ Animal::Animal(void) : type("random animal")
 	std::cout << "Animal default constructor called for " << this->type << std::endl;
 }
 
-Animal::Animal(std::string type_) : type(type_)
+Animal::Animal(std::string const type_) : type(type_)
 {
 	std::cout << "Animal default constructor called for " << this->type << std::endl;
 }
@@ -54,7 +54,7 @@ std::string	Animal::getType(void) const
 	return (this->type);
 }
 
-void Animal::setType(std::string typ)
+void Animal::setType(std::string const typ)
 {
 	this->type = typ;
 }

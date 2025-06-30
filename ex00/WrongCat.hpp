@@ -19,13 +19,12 @@ class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat(void);
-		WrongCat(std::string type_);
+		WrongCat(std::string const type_);
 		WrongCat(const WrongCat &copy);
 		WrongCat	&operator=(const WrongCat &rhs);
 		~WrongCat(void);
-		// virtual ~WrongCat(void); Ca peut etre bien de le remettre a chaque fois
-		// virtual void makeSound(void) const;
-		void makeSound(void) const;
+
+		void		makeSound(void) const;
 };
 
 #endif

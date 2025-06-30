@@ -20,7 +20,7 @@ Cat::Cat(void) : Animal()
 	std::cout << "Cat default constructor called for " << this->type << std::endl;
 }
 
-Cat::Cat(std::string type_) : Animal(type_)
+Cat::Cat(std::string const type_) : Animal(type_)
 {
 	std::cout << "Cat default constructor called for " << this->type << std::endl;
 }

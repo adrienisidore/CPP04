@@ -10,12 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 #include "Kitten.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
+
+//ex01
+
+// À la construction, les classes Dog et Cat créeront leur Brain avec new Brain();
+// À la destruction, les classes Dog et Cat devront delete leur Brain.
+// tableau d’objets Animal. Les destructeurs correspondants doivent être appelés dans le bon ordre.
+
+//ex02 Animal devient AAnimal, une classe abstraite
+
 
 //ex01
 
@@ -43,47 +50,9 @@
 
 int	main(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* i = new Dog();
-	const Animal* j = new Cat();
-	const Animal* k;
-	const Animal* const useless = new Cat();
-	//const Animal* : je ne peux pas modifier le contenu pointe
-	//Animal* const : le ptr lui meme est constant et doit etre initialise directement
-	//const Animal* const : le contenu et le pointeur sont constants
-	//Je peux donc declarer k et lui attribuer une valeur plus tard (qui sera alors figee)
-	WrongAnimal*	w_meta = new WrongAnimal();
-	WrongAnimal*	w_j = new WrongCat();
-	
-	(void)useless;
-	// useless.setType("Angry Cat");//impossible de modifier le contenu pointe (const Animal* ...)
-	// delete useless;
-	// useless = new Dog();//impossible de modifier le ptr lui meme (...Animal* const)
-	if (j->getType() == "Cat")
-		k = new Kitten();
-	else
-		k = new Dog();
-	std::cout << "k is a " << k->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << j->getType() << std::endl;
-	std::cout << w_j->getType() << std::endl;
-	
-	meta->makeSound();
-	w_meta->makeSound();
-	i->makeSound();
-	j->makeSound();
-	w_j->makeSound();
-	k->makeSound();
-	
-	//L'ordre importe peu
-	delete i;
-	delete j;
-	delete w_j;
-	delete k;
-	delete meta;
-	delete w_meta;
-	delete useless;
 
+	//Se servir de WrongAnimal et WrongCat pour montrer que si je fais pas de copie profonde
+	//alors ça cree un probleme à la destruction de mes instances (voir sujet correction)
 	
 	return (0);
 }

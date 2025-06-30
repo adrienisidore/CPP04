@@ -17,7 +17,7 @@ WrongAnimal::WrongAnimal(void) : type("random WrongAnimal")
 	std::cout << "WrongAnimal default constructor called for " << this->type << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type_) : type(type_)
+WrongAnimal::WrongAnimal(std::string const type_) : type(type_)
 {
 	std::cout << "WrongAnimal default constructor called for " << this->type << std::endl;
 }
@@ -31,7 +31,8 @@ WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << "Assignment operator called : " << this->type << "becomes " << rhs.type << std::endl;
+		std::cout << "Assignment operator called : " << this->type
+		<< "becomes " << rhs.type << std::endl;
 		this->type = rhs.type;
 	}
 	else
@@ -54,7 +55,7 @@ std::string	WrongAnimal::getType(void) const
 	return (this->type);
 }
 
-void WrongAnimal::setType(std::string typ)
+void WrongAnimal::setType(std::string const typ)
 {
 	this->type = typ;
 }

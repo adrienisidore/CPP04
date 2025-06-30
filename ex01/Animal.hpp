@@ -21,16 +21,14 @@ class Animal
 		std::string	type;
 	public:
 		Animal(void);
-		Animal(std::string type_);
+		Animal(std::string const type_);
 		Animal(const Animal &copy);
-		Animal	&operator=(const Animal &rhs);
-		virtual ~Animal(void);//LE DESTRUCTEUR DU PARENT DOIT AUSSI ETRE VIRTUAL
-		virtual void makeSound(void) const;//const: ne peut modifier l'instance courante
-		
-		//Doit on egalement mettre getType et setType en virtual ? Ou meme de les reecrire dans Cat et Dog ?
-		//Le type que je veux modifier est celui present dans l'instance Animal
-		std::string	getType(void) const;//const: ne peut modifier l'instance courante
-		void setType(std::string typ);
+		Animal			&operator=(const Animal &rhs);
+		virtual ~Animal(void);
+		virtual void	makeSound(void) const;
+
+		std::string		getType(void) const;
+		void			setType(std::string const typ);
 };
 
 #endif

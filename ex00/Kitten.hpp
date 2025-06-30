@@ -19,11 +19,11 @@ class Kitten : public Cat
 {
 	public:
 		Kitten(void);
-		Kitten(std::string type_);
+		Kitten(std::string const type_);
 		Kitten(const Kitten &copy);
-		Kitten	&operator=(const Kitten &rhs);
-		~Kitten(void);
-		void makeSound(void) const;
+		Kitten			&operator=(const Kitten &rhs);
+		virtual ~Kitten(void);
+		virtual void	makeSound(void) const;
 };
 
 #endif

@@ -19,13 +19,12 @@ class Dog : public Animal
 {
 	public:
 		Dog(void);
-		Dog(std::string type_);
+		Dog(std::string const type_);
 		Dog(const Dog &copy);
 		Dog	&operator=(const Dog &rhs);
-		~Dog(void);
-		// virtual ~Dog(void);//NECESSAIRE SI CHiot herite de Dog ?
-		// virtual void makeSound(void) const;
-		void makeSound(void) const;
+		virtual ~Dog(void);
+
+		virtual void makeSound(void) const;
 };
 
 #endif

@@ -20,13 +20,12 @@ class Cat : public Animal
 {
 	public:
 		Cat(void);
-		Cat(std::string type_);
+		Cat(std::string const type_);
 		Cat(const Cat &copy);
-		Cat	&operator=(const Cat &rhs);
-		~Cat(void);
-		// virtual ~Cat(void); Ca peut etre bien de le remettre a chaque fois
-		// virtual void makeSound(void) const;
-		void makeSound(void) const;
+		Cat				&operator=(const Cat &rhs);
+		virtual ~Cat(void);
+
+		virtual void	makeSound(void) const;
 	private:
 		Brain*	brain;
 };
