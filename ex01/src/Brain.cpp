@@ -19,7 +19,6 @@
 //2) Les tableaux natifs ne sont pas assignables directement
 // this->ideas = rhs.ideas; ==> FAUX
 
-
 Brain::Brain(void)
 {
 	int	i;
@@ -72,7 +71,6 @@ Brain	&Brain::operator=(const Brain &rhs)
 {
 	int	i;
 
-	
 	if (this != &rhs)
 	{
 		std::cout << "Assignment operator called" << std::endl;
@@ -104,7 +102,6 @@ void Brain::ft_setIdea(int idx, const std::string &idea)
     else
         std::cerr << "Index out of bounds in ft_setIdea: " << idx << std::endl;
 }
-
 
 Brain::~Brain(void)
 {
