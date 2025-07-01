@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 11:45:31 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 11:50:39 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ Dog::Dog(std::string const type_) : Animal(type_), _brain(new Brain())
 	<< this->type << std::endl;
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy)
+Dog::Dog(const Dog &copy) : Animal(copy), _brain(new Brain(*copy._brain))
 {
 	std::cout << "Dog copy constructor called for "
 	<< this->type << std::endl;
-	this->_brain = new Brain(*copy._brain);
+	// this->_brain = new Brain(*copy._brain);
 }
 
 Dog	&Dog::operator=(const Dog &rhs)
