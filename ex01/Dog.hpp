@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 10:05:25 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 14:05:59 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Dog : public Animal
 		Dog				&operator=(const Dog &rhs);
 		virtual ~Dog(void);
 
+		void			setIdea(int idx, std::string const &idea);
+		std::string		getIdea(int idx) const;
+		
 		virtual void	makeSound(void) const;
 	private:
 		Brain*	_brain;//Dog n'herite pas de Brain, c'est juste un attribut

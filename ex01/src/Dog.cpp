@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 11:50:39 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 14:06:32 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,16 @@ Dog::~Dog(void)
 	std::cout << "Dog default destructor called for "
 	<< this->type << std::endl;
 	delete _brain;
+}
+
+void Dog::setIdea(int idx, std::string const &idea)
+{
+    this->_brain->ft_setIdea(idx, idea);
+}
+
+std::string Dog::getIdea(int idx) const
+{
+    return this->_brain->ft_getIdea(idx);
 }
 
 void Dog::makeSound(void) const

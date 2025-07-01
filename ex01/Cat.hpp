@@ -25,6 +25,9 @@ class Cat : public Animal
 		Cat				&operator=(const Cat &rhs);
 		virtual ~Cat(void);
 
+		void			setIdea(int idx, std::string const &idea);
+		std::string		getIdea(int idx) const;
+
 		virtual void	makeSound(void) const;
 	private:
 		Brain*	_brain;//Cat n'herite pas de Brain, c'est juste un attribut

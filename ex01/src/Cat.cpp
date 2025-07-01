@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 11:47:39 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 14:03:58 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,17 @@ Cat::~Cat(void)
 	<< this->type << std::endl;
 	delete _brain;
 }
+
+void Cat::setIdea(int idx, std::string const &idea)
+{
+    this->_brain->ft_setIdea(idx, idea);
+}
+
+std::string Cat::getIdea(int idx) const
+{
+    return this->_brain->ft_getIdea(idx);
+}
+
 
 void Cat::makeSound(void) const
 {

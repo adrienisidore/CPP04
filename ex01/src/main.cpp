@@ -6,14 +6,12 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 09:59:26 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 14:06:52 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Kitten.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 //ex02 Animal devient AAnimal, une classe abstraite
 
@@ -42,21 +40,62 @@
 
 //ex02 Animal devient AAnimal, une classe abstraite
 
-int	main(void)
+// int	main(void)
+// {
+// 	//Classe abstraite : j'oblige que certaines fonctions a etre redefinies'
+// 	//Interface : je suis oblige d'avoir toutes les fonctions qui ont = 0 ?
+
+// 	//Se servir de WrongAnimal et WrongCat pour montrer que si je fais pas de copie profonde
+// 	//alors ça cree un probleme à la destruction de mes instances (voir sujet correction)
+
+// 	Animal	animal[100];
+
+// 	//Moitie chien, moitie chat :
+	
+
+// 	// À la fin de l’exécution
+// 	// du programme, parcourez ce tableau afin de delete chaque Animal. Vous devez delete
+// 	// directement les chiens et les chats en tant qu’Animal. Les destructeurs correspondants
+// 	// doivent être appelés dans le bon ordre.
+	
+// 	return (0);
+// }
+
+
+
+int main(void)
 {
+    const int SIZE = 4;
+    Animal* animals[SIZE];
 
-	//Se servir de WrongAnimal et WrongCat pour montrer que si je fais pas de copie profonde
-	//alors ça cree un probleme à la destruction de mes instances (voir sujet correction)
+    for (int i = 0; i < SIZE; ++i)
+    {
+        if (i < SIZE / 2)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
+    }
 
-	Animal	animal[100];
+    std::cout << "\n--- Sounds check ---" << std::endl;
+    for (int i = 0; i < SIZE; ++i)
+        animals[i]->makeSound();
 
-	//Moitie chien, moitie chat :
-	
+    std::cout << "\n--- Deep copy test ---" << std::endl;
+    Cat original;
+    original.setIdea(0, "I want fish.");
+    Cat copy = original;
 
-	// À la fin de l’exécution
-	// du programme, parcourez ce tableau afin de delete chaque Animal. Vous devez delete
-	// directement les chiens et les chats en tant qu’Animal. Les destructeurs correspondants
-	// doivent être appelés dans le bon ordre.
-	
-	return (0);
+    std::cout << "Original idea: " << original.getIdea(0) << std::endl;
+    std::cout << "Copy idea: " << copy.getIdea(0) << std::endl;
+
+    copy.setIdea(0, "I want to sleep.");
+    std::cout << "After modifying the copy:" << std::endl;
+    std::cout << "Original idea: " << original.getIdea(0) << std::endl;
+    std::cout << "Copy idea: " << copy.getIdea(0) << std::endl;
+
+    std::cout << "\n--- Cleaning up ---" << std::endl;
+    for (int i = 0; i < SIZE; ++i)
+        delete animals[i];
+
+    return 0;
 }
