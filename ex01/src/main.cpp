@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 16:15:37 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 09:59:26 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 #include "Kitten.hpp"
 #include "Dog.hpp"
 #include "WrongCat.hpp"
-
-//ex01
-
-// À la construction, les classes Dog et Cat créeront leur Brain avec new Brain();
-// À la destruction, les classes Dog et Cat devront delete leur Brain.
-// tableau d’objets Animal. Les destructeurs correspondants doivent être appelés dans le bon ordre.
 
 //ex02 Animal devient AAnimal, une classe abstraite
 
@@ -53,6 +47,16 @@ int	main(void)
 
 	//Se servir de WrongAnimal et WrongCat pour montrer que si je fais pas de copie profonde
 	//alors ça cree un probleme à la destruction de mes instances (voir sujet correction)
+
+	Animal	animal[100];
+
+	//Moitie chien, moitie chat :
+	
+
+	// À la fin de l’exécution
+	// du programme, parcourez ce tableau afin de delete chaque Animal. Vous devez delete
+	// directement les chiens et les chats en tant qu’Animal. Les destructeurs correspondants
+	// doivent être appelés dans le bon ordre.
 	
 	return (0);
 }

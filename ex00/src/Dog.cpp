@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/11 19:03:41 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/01 09:48:40 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 Dog::Dog(void) : Animal()
 {
 	this->type = "Dog";
-	std::cout << "Dog default constructor called for " << this->type << std::endl;
+	std::cout << "Dog default constructor called for "
+	<< this->type << std::endl;
 }
 
 Dog::Dog(std::string const type_) : Animal(type_)
 {
-	std::cout << "Dog default constructor called for " << this->type << std::endl;
+	std::cout << "Dog default constructor called for "
+	<< this->type << std::endl;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
-	std::cout << "Dog copy constructor called for " << this->type << std::endl;	
+	std::cout << "Dog copy constructor called for "
+	<< this->type << std::endl;	
 }
 
 Dog	&Dog::operator=(const Dog &rhs)
@@ -37,13 +40,17 @@ Dog	&Dog::operator=(const Dog &rhs)
 		this->type = rhs.type;
 	}
 	else
-		std::cout << "Assignment operator called for the same instance" << std::endl;
+	{
+		std::cout << "Assignment operator called for the same instance"
+		<< std::endl;
+	}
 	return (*this);
 }
 
 Dog::~Dog(void)
 {
-	std::cout << "Dog default destructor called for " << this->type << std::endl;
+	std::cout << "Dog default destructor called for "
+	<< this->type << std::endl;
 }
 
 void Dog::makeSound(void) const

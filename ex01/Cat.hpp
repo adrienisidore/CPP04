@@ -27,7 +27,7 @@ class Cat : public Animal
 
 		virtual void	makeSound(void) const;
 	private:
-		Brain*	brain;
+		Brain*	_brain;//Cat n'herite pas de Brain, c'est juste un attribut
 };
 
 #endif
