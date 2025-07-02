@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:46:45 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 19:49:15 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:04:42 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define CHARACTER_HPP
 
 # include "ICharacter.hpp"
+
+
+//ATTENTION LES POINTS H DOIVENT ETRE INDEP
+
+
 
 class Character : public ICharacter
 {
