@@ -6,15 +6,16 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 14:05:59 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 12:03:02 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "./Animal.hpp"
+# include "./Brain.hpp"
+# include <iostream>
 
 class Dog : public Animal
 {
