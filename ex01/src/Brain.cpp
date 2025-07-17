@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "../Brain.hpp"
 
 // 1) Les tableaux membres (std::string ideas[100])
 // ne peuvent pas être initialisés via une liste d'initialisation.
@@ -94,7 +94,7 @@ std::string Brain::ft_getIdea(int idx) const
     std::cerr << "Index out of bounds in ft_getIdea: " << idx << std::endl;
     return ("");
 }
-
+///Faire des verifications sur std::string ???????????????????????
 void Brain::ft_setIdea(int idx, const std::string &idea)
 {
     if (idx >= 0 && idx < 100)

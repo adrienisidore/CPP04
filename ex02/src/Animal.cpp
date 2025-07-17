@@ -6,11 +6,11 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:04 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 19:34:44 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:57:31 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../Animal.hpp"
 
 Animal::Animal(void) : type("random animal")
 {

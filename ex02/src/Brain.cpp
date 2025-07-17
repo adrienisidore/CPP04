@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "../Brain.hpp"
 
 // 1) Les tableaux membres (std::string ideas[100])
 // ne peuvent pas être initialisés via une liste d'initialisation.

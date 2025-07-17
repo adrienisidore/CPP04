@@ -6,17 +6,15 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 19:19:35 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 17:00:43 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "../Cat.hpp"
+#include "../Brain.hpp"
 
-Cat::Cat(void) : Animal(), _brain(new Brain())
+Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 {
-	this->type = "Cat";
-	// this->_brain = new Brain();
 	std::cout << "Cat default constructor called for "
 	<< this->type << std::endl;
 }
@@ -31,7 +29,6 @@ Cat::Cat(const Cat &copy) : Animal(copy), _brain(new Brain(*copy._brain))
 {
 	std::cout << "Cat copy constructor called for "
 	<< this->type << std::endl;
-	// this->_brain = new Brain(*copy._brain);
 }
 
 Cat	&Cat::operator=(const Cat &rhs)

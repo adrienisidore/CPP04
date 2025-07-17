@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Kitten.hpp"
+#include "../Kitten.hpp"
 
-Kitten::Kitten(void) : Cat()
+Kitten::Kitten(void) : Cat("Kitten")
 {
-	this->type = "Kitten";
 	std::cout << "Kitten default constructor called for "
 	<< this->type << std::endl;
 }

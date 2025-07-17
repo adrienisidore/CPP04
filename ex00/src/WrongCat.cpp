@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../WrongCat.hpp"
 
-WrongCat::WrongCat(void) : WrongAnimal()
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 {
-	this->type = "WrongCat";
 	std::cout << "WrongCat default constructor called for "
 	<< this->type << std::endl;
 }

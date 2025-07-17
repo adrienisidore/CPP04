@@ -6,12 +6,12 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 19:25:16 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:57:20 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "../Cat.hpp"
+#include "../Dog.hpp"
 
 int main(void)
 {

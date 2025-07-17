@@ -6,11 +6,11 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:04 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 09:51:45 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:56:29 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) : type("random WrongAnimal")
 {

@@ -6,15 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 09:48:40 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:56:08 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../Dog.hpp"
 
-Dog::Dog(void) : Animal()
+Dog::Dog(void) : Animal("Dog")
 {
-	this->type = "Dog";
 	std::cout << "Dog default constructor called for "
 	<< this->type << std::endl;
 }

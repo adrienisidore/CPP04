@@ -6,12 +6,12 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 14:06:32 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:57:48 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Brain.hpp"
+#include "../Dog.hpp"
+#include "../Brain.hpp"
 
 Dog::Dog(void) : Animal(), _brain(new Brain())
 {

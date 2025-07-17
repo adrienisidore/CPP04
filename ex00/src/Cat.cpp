@@ -6,15 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/01 09:48:06 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:56:03 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../Cat.hpp"
 
-Cat::Cat(void) : Animal()
+Cat::Cat(void) : Animal("Cat")
 {
-	this->type = "Cat";
 	std::cout << "Cat default constructor called for "
 	<< this->type << std::endl;
 }

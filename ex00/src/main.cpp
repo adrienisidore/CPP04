@@ -6,14 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/06/12 15:20:22 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:56:23 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Kitten.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#include "../Cat.hpp"
+#include "../Kitten.hpp"
+#include "../Dog.hpp"
+#include "../WrongCat.hpp"
 
 int	main(void)
 {
@@ -25,7 +25,7 @@ int	main(void)
 	const Animal* j = new Cat();
 	const Animal* k;
 	std::cout << std::endl  << "useless :" << std::endl;
-	const Animal* const useless = new Cat();
+	// const Animal* const useless = new Cat();
 	//const Animal* : je ne peux pas modifier le contenu pointe
 	//Animal* const : le ptr lui meme est constant et doit etre initialise directement
 	//const Animal* const : le contenu et le pointeur sont constants
@@ -36,7 +36,7 @@ int	main(void)
 	std::cout << std::endl  << "w_j :" << std::endl;
 	WrongAnimal*	w_j = new WrongCat();
 	
-	(void)useless;
+	// (void)useless;
 	// useless.setType("Angry Cat");//impossible de modifier le contenu pointe (const Animal* ...)
 	// delete useless;
 	// useless = new Dog();//impossible de modifier le ptr lui meme (...Animal* const)
@@ -57,15 +57,14 @@ int	main(void)
 	j->makeSound();
 	w_j->makeSound();
 	k->makeSound();
-	
-	//L'ordre importe peu
+
 	delete i;
 	delete j;
 	delete w_j;
 	delete k;
 	delete meta;
 	delete w_meta;
-	delete useless;
+	// delete useless;
 
 	return (0);
 }
