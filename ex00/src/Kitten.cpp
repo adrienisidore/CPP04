@@ -20,7 +20,7 @@ Kitten::Kitten(void) : Cat("Kitten")
 
 Kitten::Kitten(std::string const type_) : Cat(type_)
 {
-	std::cout << "Kitten default constructor called for "
+	std::cout << "Kitten constructor called for "
 	<< this->type << std::endl;
 }
 

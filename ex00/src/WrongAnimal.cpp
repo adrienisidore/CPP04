@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:04 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 16:56:29 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:23:01 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal(void) : type("random WrongAnimal")
 
 WrongAnimal::WrongAnimal(std::string const type_) : type(type_)
 {
-	std::cout << "WrongAnimal default constructor called for "
+	std::cout << "WrongAnimal constructor called for "
 	<< this->type << std::endl;
 }
 

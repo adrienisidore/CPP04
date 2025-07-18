@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:04 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 16:55:59 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:19:40 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal(void) : type("random animal")
 
 Animal::Animal(std::string const type_) : type(type_)
 {
-	std::cout << "Animal default constructor called for "
+	std::cout << "Animal constructor called for "
 	<< this->type << std::endl;
 }
 
@@ -57,8 +57,6 @@ void Animal::makeSound(void) const
 	std::cout << "*make animal noise*" << std::endl;
 }
 
-//Ne vaut-il pa mieux renvoyer une référence ?
-//Dans les autres CPP je renvoie aussi une copie
 std::string	Animal::getType(void) const
 {
 	return (this->type);

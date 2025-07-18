@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 17:00:43 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:21:46 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 
 Cat::Cat(std::string const type_) : Animal(type_), _brain(new Brain())
 {
-	std::cout << "Cat default constructor called for "
+	std::cout << "Cat constructor called for "
 	<< this->type << std::endl;
 }
 

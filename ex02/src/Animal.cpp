@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:04 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 16:57:31 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:20:06 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal(void) : type("random animal")
 
 Animal::Animal(std::string const type_) : type(type_)
 {
-	std::cout << "Animal default constructor called for "
+	std::cout << "Animal constructor called for "
 	<< this->type << std::endl;
 }
 

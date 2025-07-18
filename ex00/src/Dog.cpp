@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 16:56:08 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:22:13 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog(void) : Animal("Dog")
 
 Dog::Dog(std::string const type_) : Animal(type_)
 {
-	std::cout << "Dog default constructor called for "
+	std::cout << "Dog constructor called for "
 	<< this->type << std::endl;
 }
 
