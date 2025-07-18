@@ -6,17 +6,15 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/18 16:22:41 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:41:25 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Dog.hpp"
 #include "../Brain.hpp"
 
-Dog::Dog(void) : Animal(), _brain(new Brain())
+Dog::Dog(void) : Animal("Dog"), _brain(new Brain())
 {
-	this->type = "Dog";
-	// this->_brain = new Brain();
 	std::cout << "Dog default constructor called for "
 	<< this->type << std::endl;
 }
@@ -31,7 +29,6 @@ Dog::Dog(const Dog &copy) : Animal(copy), _brain(new Brain(*copy._brain))
 {
 	std::cout << "Dog copy constructor called for "
 	<< this->type << std::endl;
-	// this->_brain = new Brain(*copy._brain);
 }
 
 Dog	&Dog::operator=(const Dog &rhs)
@@ -42,7 +39,7 @@ Dog	&Dog::operator=(const Dog &rhs)
 		<< this->type << "becomes " << rhs.type << std::endl;
 		this->type = rhs.type;
 		delete this->_brain;
-		this->_brain = new Brain(*rhs._brain); // deep copy
+		this->_brain = new Brain(*rhs._brain);
 	}
 	else
 	{
@@ -66,7 +63,7 @@ void Dog::setIdea(int idx, std::string const &idea)
 
 std::string Dog::getIdea(int idx) const
 {
-    return this->_brain->ft_getIdea(idx);
+    return (this->_brain->ft_getIdea(idx));
 }
 
 void Dog::makeSound(void) const

@@ -1,3 +1,14 @@
+KEEP IN MIND :
+std::cout << std::endl  << "useless :" << std::endl;
+const Animal* const useless = new Cat();
+const Animal* : je ne peux pas modifier le contenu pointe
+Animal* const : le ptr lui meme est constant et doit etre initialise directement
+const Animal* const : le contenu et le pointeur sont constants
+Je peux donc declarer k et lui attribuer une valeur plus tard (qui sera alors figee)
+
+
+
+
 A faire pour chaque projet :
 
 - Header

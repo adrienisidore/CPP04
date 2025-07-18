@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/18 16:22:30 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:41:25 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Dog	&Dog::operator=(const Dog &rhs)
 		<< this->type << "becomes " << rhs.type << std::endl;
 		this->type = rhs.type;
 		delete this->_brain;
-		this->_brain = new Brain(*rhs._brain); // deep copy
+		this->_brain = new Brain(*rhs._brain);
 	}
 	else
 	{
@@ -63,7 +63,7 @@ void Dog::setIdea(int idx, std::string const &idea)
 
 std::string Dog::getIdea(int idx) const
 {
-    return this->_brain->ft_getIdea(idx);
+    return (this->_brain->ft_getIdea(idx));
 }
 
 void Dog::makeSound(void) const

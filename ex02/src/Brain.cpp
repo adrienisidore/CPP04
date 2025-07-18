@@ -30,8 +30,8 @@ Brain::Brain(void)
 }
 
 //Les tableaux en C++ n’ont pas de taille intégrée,
-//on ne peut pas connaitre la taille de ideas_
-// Brain::Brain(std::string *ideas_, int size)
+//on ne peut pas connaitre la taille de ideas_ sauf si on le transforme
+//en std::vector<std::string>
 Brain::Brain(std::string *ideas_)
 {
 	int	i;
@@ -47,13 +47,6 @@ Brain::Brain(std::string *ideas_)
 	i = -1;
 	while (++i < 100)
 		this->ideas[i] = ideas_[i];
-	// while (++i < 100)
-	// {
-	// 	if (i < size)
-	// 		this->ideas[i] = ideas_[i];
-	// 	else
-	// 		this->ideas[i] = "";
-	// }
 	std::cout << "Brain constructor called with ideas" << std::endl;
 }
 
@@ -75,7 +68,6 @@ Brain	&Brain::operator=(const Brain &rhs)
 	{
 		std::cout << "Assignment operator called" << std::endl;
 		i = -1;
-		//rhs est un Brain, donc forcement de taille 100
 		while (++i < 100)
 			this->ideas[i] = rhs.ideas[i];//Copie profonde
 	}

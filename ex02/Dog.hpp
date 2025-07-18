@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 12:03:02 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:16:54 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Dog : public Animal
 		
 		virtual void	makeSound(void) const;
 	private:
-		Brain*	_brain;//Dog n'herite pas de Brain, c'est juste un attribut
+		Brain*	_brain;
 };
 
 #endif

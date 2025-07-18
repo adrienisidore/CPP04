@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 12:38:20 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 16:57:55 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 19:51:50 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(void)
 	const Animal* i = new Cat();
 	delete j;
 	delete i;
+	// Animal	test;//ERROR
 
 	std::cout << "\n--- Build tab ---" << std::endl;
     const int SIZE = 4;
