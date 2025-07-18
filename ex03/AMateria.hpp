@@ -6,13 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:55:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/18 19:56:15 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/18 19:58:07 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	AMATERIA_HPP
 # define AMATERIA_HPP
 
+# include "./ICharacter.hpp"
 # include <iostream>
 
 class AMateria
