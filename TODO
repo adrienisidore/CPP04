@@ -154,6 +154,14 @@ ScavTrap::ScavTrap(void) : ClapTrap() {}
 ScavTrap::ScavTrap(std::string	name) : ClapTrap(name) {}
 ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {}
 
+
+
+
+
+
+
+
+
                                             CPP04
 - Polymorphisme : je dois utiliser new (heap). new appel le constructeur, delete le destructeur
 - A l'héritage le constructeur parent se lance avant le constructeur enfant
@@ -186,3 +194,80 @@ COMMENT COMPILER CODE SIMPLEMENT POUR LE TESTER EN EXAM ? COMME CA ?
 c++ -Wall -Wextra -Werror -I. -std=c++98 ... animal
 
 
+
+
+POLYMORPHISME (via pointeurs et references):
+
+class A {
+public:
+    void F1();         // NON virtuelle
+    virtual void F2(); // VIRTUELLE
+};
+
+class B : public A {
+public:
+    void F1(); // même nom, mais pas virtual dans A
+    void F2(); // redéfinit la version virtuelle de A
+};
+
+---
+
+Appels normaux : ici pas de piege, on appelle les méthodes sur les vrais objets a et b, donc on obtient leurs méthodes respectives.
+
+A a;
+a.F1(); // A::F1()
+a.F2(); // A::F2()
+
+B b;
+b.F1(); // B::F1()
+b.F2(); // B::F2()
+
+---
+
+Copie non polymorphe : a = b; Tu copies un B dans un A. Le B est "tronqué", cad que seule la partie A est copiée. Le reste est perdu.
+Du coup, tu appelles F1() et F2() comme si tu avais un vrai A, car tu as effectivement un vrai A (et non un B caché derrière).
+
+a = b;
+a.F1(); // A::F1()
+a.F2(); // A::F2()
+
+---
+
+Copie polymorphe : Même si pa est de type A*, il pointe en réalité vers un objet B.
+
+A* ptr = &b;
+ptr->F1(); // A::F1() <-- car F1 n'est pas virtuelle
+ptr->F2(); // B::F2() <-- car F2 est virtuelle
+
+
+A& ref = b;
+ref.F1(); // A::F1()
+ref.F2(); // B::F2()
+
+Autre exemple :
+
+class Animal {
+public:
+    void makenoise() { std::cout << "L'animal fait un bruit.\n"; }
+    virtual std::string whoAmI() { return "animal"; }
+};
+
+class Chat : public Animal {
+public:
+    void makenoise() { std::cout << "Miaou.\n"; }
+    std::string whoAmI() override { return "chat"; }
+};
+
+int main() {
+    Animal* kiki = new Chat();
+    kiki->makenoise();           // appel NON virtuel → Animal::makenoise()
+    std::cout << kiki->whoAmI(); // appel VIRTUEL → Chat::whoAmI()
+}
+
+Grace a virtual whoAmI est evolutif est s'adapte en fonction de l'animal en question. Le choix de la bonne fonction ne se fait pas lors de la compilation
+mais lors de l'execution. Ainsi :
+"Avec l'orientation objet, la réutilisation peut aussi être accomplie via l'appel de nouveau code par de l'ancien.
+Par exemple, un programmeur peut écrire du code qui est appelé par un framework qui a été écrit par son arrière grand-père.
+Il n'y a pas besoin de modifier le code écrit par l'arrière grand-père. En fait, il n'a même pas besoin d'être recompilé.
+Et si jamais il ne restait que le fichier objet, et que le code écrit par l'arrière grand-père ait été perdu depuis 25 ans,
+cet ancien fichier objet appellera le code avec les nouvelles fonctionnalités sans rien changer d'autre."
