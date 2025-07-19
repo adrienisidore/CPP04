@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:29:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 16:12:45 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:15:54 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ AMateria::AMateria(AMateria const & copy)
 
 AMateria &AMateria::operator=(const AMateria &rhs)
 {
-	std::cout << "Assignment operator called for "
+	std::cout << "AMateria assignment operator called for "
 	<< rhs._type << std::endl;
 	if (this != &rhs)
 		this->_type = rhs._type; //copie profonde
@@ -45,6 +45,7 @@ AMateria &AMateria::operator=(const AMateria &rhs)
 
 AMateria::~AMateria(void)
 {
+	std::cout << "AMateria default destructor called" << std::endl;
 	return ;
 }
 

@@ -36,7 +36,7 @@ WrongCat	&WrongCat::operator=(const WrongCat &rhs)
 	{
 		std::cout << "Assignment operator called : "
 		<< this->type << "becomes " << rhs.type << std::endl;
-		this->type = rhs.type;
+		this->type = rhs.type;//WrongAnimal::operator=(rhs);
 	}
 	else
 	{

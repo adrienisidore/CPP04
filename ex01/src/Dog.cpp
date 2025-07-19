@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:59 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/18 18:41:25 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:58:18 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Dog	&Dog::operator=(const Dog &rhs)
 	{
 		std::cout << "Assignment operator called : "
 		<< this->type << "becomes " << rhs.type << std::endl;
-		this->type = rhs.type;
+		this->type = rhs.type;//Animal::operator=(rhs);
 		delete this->_brain;
 		this->_brain = new Brain(*rhs._brain);
 	}

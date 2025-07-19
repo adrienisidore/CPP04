@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:46:45 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 16:01:43 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:23:20 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "./ICharacter.hpp"
 # include <iostream>
-
-//GITHUB DE PAUL
 
 class Character : public ICharacter
 {

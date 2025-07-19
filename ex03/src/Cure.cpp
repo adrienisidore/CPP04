@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:13:56 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 16:28:54 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:16:12 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ Cure::Cure(Cure const & copy)
 
 Cure &Cure::operator=(const Cure &rhs)
 {
-	std::cout << "Assignment operator called for "
+	std::cout << "Cure assignment operator called for "
 	<< rhs._type << std::endl;
 	if (this != &rhs)
-		this->_type = rhs._type; //copie profonde
+		AMateria::operator=(rhs);
 	return (*this);
 }
 
-
 Cure::~Cure(void)
 {
+	std::cout << "Cure default destructor called" << std::endl;
 	return ;
 }
 
@@ -48,9 +48,14 @@ const std::string& Cure::getType(void) const
 	return (this->_type);
 }
 
-//Phrase generique virtual, chaque Materia (Ice/Cure) a sa propre phrase
+AMateria	*Cure::clone(void) const
+{
+	std::cout << "Cloning Cure Materia" << std::endl;
+	return (new Cure());
+}
+
 void Cure::use(ICharacter& target)
 {
-	std::cout << "Use of a Materia on "
-	<< target.getName() << std::endl;
+	std::cout << "'* heals " << target.getName()
+	<< "’s wounds *'" << std::endl;
 }

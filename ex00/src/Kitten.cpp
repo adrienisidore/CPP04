@@ -36,7 +36,7 @@ Kitten	&Kitten::operator=(const Kitten &rhs)
 	{
 		std::cout << "Assignment operator called : "
 		<< this->type << "becomes " << rhs.type << std::endl;
-		this->type = rhs.type;
+		this->type = rhs.type;//Cat::operator=(rhs);
 	}
 	else
 	{

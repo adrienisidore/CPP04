@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:19:01 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/18 18:41:32 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:00:49 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Cat	&Cat::operator=(const Cat &rhs)
 	{
 		std::cout << "Assignment operator called : "
 		<< this->type << "becomes " << rhs.type << std::endl;
-		this->type = rhs.type;
+		this->type = rhs.type;//Animal::operator=(rhs);
 		delete this->_brain;
 		this->_brain = new Brain(*rhs._brain); // copie profonde
 	}
