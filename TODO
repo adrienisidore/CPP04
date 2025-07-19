@@ -155,7 +155,9 @@ ScavTrap::ScavTrap(std::string	name) : ClapTrap(name) {}
 ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {}
 
 
-
+- C'est l'enfant qui est chef d'orchestre : il lance le parent, qui lance le grand parent (son constructeur), puis le constructeur du parent se cree
+puis le constructeur de l'enfant se cree. Ce qui peut poser probleme c'est si j'ai un heritage en diamant :
+l'enfant lance ses 2 parents, et chacun va vouloir lancer une copie du grand-parent. En mettant virtual les 2 parents vont se coordonner pour creer 1 seul grand parent
 
 
 
