@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:13:56 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:16:12 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:36:53 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ Cure &Cure::operator=(const Cure &rhs)
 {
 	std::cout << "Cure assignment operator called for "
 	<< rhs._type << std::endl;
-	if (this != &rhs)
-		AMateria::operator=(rhs);
+	// if (this != &rhs)
+	// 	AMateria::operator=(rhs);
 	return (*this);
 }
 

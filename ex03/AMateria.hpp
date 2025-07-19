@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:55:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:09:56 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:38:09 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 		
 class AMateria
 {
+	private:
+	//respect de la forme canonique, mais surcharge inutile d'apres la consigne
+		AMateria			&operator=(const AMateria &rhs);
 	protected:
 		std::string			_type;
 	public:
 		AMateria(void);
 		AMateria(std::string const & type);
 		AMateria(AMateria const & copy);
-		AMateria			&operator=(const AMateria &rhs);
 		virtual ~AMateria(void);
 		
 		std::string const &	getType() const;

@@ -6,14 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:07:12 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:23:41 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:35:18 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	ICE_HPP
 # define ICE_HPP
 
-# include "../ICharacter.hpp"
+# include "./ICharacter.hpp"
 
 class Ice : public AMateria
 {

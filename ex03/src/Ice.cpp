@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:14:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:21:46 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:36:58 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ Ice &Ice::operator=(const Ice &rhs)
 {
 	std::cout << "Ice assignment operator called for "
 	<< rhs._type << std::endl;
-	if (this != &rhs)
-		AMateria::operator=(rhs);
+	// if (this != &rhs)
+	// 	AMateria::operator=(rhs);
 	return (*this);
 }
 

@@ -6,14 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:07:12 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:23:33 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:35:15 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CURE_HPP
 # define CURE_HPP
 
-# include "../ICharacter.hpp"
+# include "./ICharacter.hpp"
 
 class Cure : public AMateria
 {
