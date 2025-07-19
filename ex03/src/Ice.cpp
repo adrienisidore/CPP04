@@ -1,31 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 19:46:45 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 16:01:43 by aisidore         ###   ########.fr       */
+/*   Created: 2025/07/19 16:14:14 by aisidore          #+#    #+#             */
+/*   Updated: 2025/07/19 16:14:25 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CHARACTER_HPP
-# define CHARACTER_HPP
-
-# include "./ICharacter.hpp"
-# include <iostream>
-
-//GITHUB DE PAUL
-
-class Character : public ICharacter
-{
-	private:
-		std::string		inventory[4];
-		std::string		garbage[100];
-	public:
-	//AJOUTER FORME CANONIQUE
-		
-};
-
-#endif
+#include "Ice.hpp"

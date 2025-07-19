@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 19:55:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 16:12:37 by aisidore         ###   ########.fr       */
+/*   Created: 2025/07/19 16:07:12 by aisidore          #+#    #+#             */
+/*   Updated: 2025/07/19 16:15:40 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	AMATERIA_HPP
-# define AMATERIA_HPP
+#include "../IMateriaSource.hpp"
+//Pas besoin d'ajouter AMateria.hpp (car present dans IMateriaSource) ?
 
-# include "./ICharacter.hpp"
-# include <iostream>
-		
-class AMateria
+class Ice : public AMateria
 {
-	protected:
-		std::string			_type;
+	private:
+	//Besoin d'attributs private ?	
 	public:
-		AMateria(void);
-		AMateria(std::string const & type);
-		AMateria(AMateria const & copy);
-		AMateria			&operator=(const AMateria &rhs);
-		~AMateria(void);
+		Ice(void);
+		Ice(std::string const & type);
+		Ice(Ice const & copy);
+				//Quand on assigne une Materia à une autre, copier son type n’a pas grand intérêt.
+		Ice				&operator=(const Ice &rhs);
+		~Ice(void);
 		
 		std::string const &	getType() const;
-		virtual AMateria*	clone() const = 0;//par def non defini dans .cpp
-		virtual void		use(ICharacter& target);
+		Ice*				clone() const;
+		void				use(ICharacter& target);
 };
-
-#endif

@@ -6,13 +6,14 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:43:09 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 12:03:21 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/19 15:42:55 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
+# include "./AMateria.hpp"
 # include <iostream>
 
 class IMateriaSource
