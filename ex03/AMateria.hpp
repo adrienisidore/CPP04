@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:55:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:38:09 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/22 17:30:38 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AMateria
 		virtual ~AMateria(void);
 		
 		std::string const &	getType() const;
-		virtual AMateria*	clone() const = 0;//par def non defini dans .cpp
+		virtual AMateria*	clone() const = 0;//non defini dans .cpp, capacite a se cloner elle-meme
 		virtual void		use(ICharacter& target);
 };
 

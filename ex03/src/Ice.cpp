@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:14:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:36:58 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/22 16:22:44 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Ice::Ice(Ice const & copy)
 
 Ice &Ice::operator=(const Ice &rhs)
 {
-	std::cout << "Ice assignment operator called for "
+	std::cout << "Useless Ice assignment operator called for "
 	<< rhs._type << std::endl;
 	// if (this != &rhs)
 	// 	AMateria::operator=(rhs);

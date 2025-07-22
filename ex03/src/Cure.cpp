@@ -6,11 +6,11 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:13:56 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:36:53 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/22 16:22:36 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "../Cure.hpp"
 
 Cure::Cure(void)
 {
@@ -29,7 +29,7 @@ Cure::Cure(Cure const & copy)
 
 Cure &Cure::operator=(const Cure &rhs)
 {
-	std::cout << "Cure assignment operator called for "
+	std::cout << "Useless Cure assignment operator called for "
 	<< rhs._type << std::endl;
 	// if (this != &rhs)
 	// 	AMateria::operator=(rhs);

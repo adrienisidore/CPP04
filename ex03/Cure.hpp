@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:07:12 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:35:15 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/22 16:20:13 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CURE_HPP
 
 # include "./ICharacter.hpp"
+# include <iostream>
 
 class Cure : public AMateria
 {
