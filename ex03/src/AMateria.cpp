@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:29:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/19 17:15:54 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 15:31:29 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,14 @@ AMateria::~AMateria(void)
 	return ;
 }
 
-//Le Materia renvoye (via une ref) ne peut pas etre modifie
+//Le Materia renvoie (via une ref) ne peut pas etre modifie
 const std::string& AMateria::getType(void) const
 {
 	return (this->_type);
 }
 
-//Phrase generique virtual, chaque Materia (Ice/Cure) a sa propre phrase
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "Use of a Materia on "
+	std::cout << "Use of a Materia " << this->_type << " on "
 	<< target.getName() << std::endl;
 }

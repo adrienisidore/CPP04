@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:46:45 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/22 17:34:29 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:14:07 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ class Character : public ICharacter
 {
 	private:
 		std::string		_name;
-		AMateria		*_inventory[4];//tableau de Materias
+		AMateria		*_inventory[4];//tableau d'adresses de Materias
 		AMateria		*_garbage[100];//idem
 	public:
 		Character(void);
 		Character(std::string const &name);
-		Character(const Character &copy);//Ou "const ICharacter &copy" ?
+		Character(const Character &copy);
 		Character			&operator=(const Character &rhs);
 		~Character(void);
 

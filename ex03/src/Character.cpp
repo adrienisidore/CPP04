@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:57:39 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/23 14:47:37 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:19:21 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,54 @@ std::string const	&Character::getName(void) const
 	return (this->_name);
 }
 
-//Si plus de 100 elements au sol je refuse de desequiper
+void	Character::equip(AMateria *m)
+{
+	//On cherche la 1ere place disponible pour equiper
+	for (int i = 0; i < 4; i++)
+	{
+		if (!this->_inventory[i])
+		{
+			this->_inventory[i] = m;
+			std::cout << "Materia " << m->getType()
+			<< " is equipped in position " << i + 1 << std::endl;
+			return;
+		}
+	}
+	std::cout << "Your inventory is full ! You can't equip this"
+	<< " Materia " << m->getType() << std::endl;
+	delete m;
+}
+
+void	Character::unequip(int idx)
+{
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "Are you sure you're talking about the right position ?" << std::endl;
+		return;
+	}
+	|| !this->_inventory[idx]
+
+	//Je place la Materia a la 1ere position au sol trouve
+	for (int i = 0; i < 100; i++)
+	{
+		if (!this->_garbage[i])
+		{
+			std::cout << "Materia " << this->_inventory[idx]->getType()
+			<< "is unequipped. Position " << idx + 1
+			<< " in inventory is now empty" << std::endl;
+			//Copie de l'adresse "_inventory[idx]" dans "_garbage[i]" 
+			this->_garbage[i] = this->_inventory[idx];
+			//On desequipe la Materia sans la detruire
+			this->_inventory[idx] = NULL;
+			return;
+		}
+	}
+
+}
+
+void	Character::use(int idx, ICharacter &target)
+{
+	if (!this->_inventory[idx] || idx < 0 || idx > 3)
+		return ;
+	this->_inventory[idx]->use(target);
+}

@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:40:40 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/22 16:28:37 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 15:20:57 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "./AMateria.hpp"
 # include <iostream>
+
+class	AMateria;//ICharacter present dans AMateria, et inversement
 
 class ICharacter
 {

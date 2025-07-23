@@ -6,13 +6,13 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:13:56 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/22 16:22:36 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:12:54 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
 	std::cout << "Cure default constructor called"
 	<< std::endl;
@@ -50,7 +50,7 @@ const std::string& Cure::getType(void) const
 
 AMateria	*Cure::clone(void) const
 {
-	std::cout << "Cloning Cure Materia" << std::endl;
+	// std::cout << "Cloning Cure Materia" << std::endl;
 	return (new Cure());
 }
 

@@ -6,13 +6,13 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:14:14 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/22 16:22:44 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:12:49 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) : AMateria("ice")
 {
 	std::cout << "Ice default constructor called"
 	<< std::endl;
@@ -50,7 +50,7 @@ const std::string& Ice::getType(void) const
 
 AMateria	*Ice::clone(void) const
 {
-	std::cout << "Cloning Ice Materia" << std::endl;
+	// std::cout << "Cloning Ice Materia" << std::endl;
 	return (new Ice());
 }
 
