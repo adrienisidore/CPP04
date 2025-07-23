@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/18 17:16:54 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:46:11 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ class Dog : public Animal
 		Dog(std::string const type_);
 		Dog(const Dog &copy);
 		Dog				&operator=(const Dog &rhs);
-		virtual ~Dog(void);
+		~Dog(void);
 
 		void			setIdea(int idx, std::string const &idea);
 		std::string		getIdea(int idx) const;
 		
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 	private:
 		Brain*	_brain;
 };

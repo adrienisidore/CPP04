@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 12:03:57 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:44:55 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Kitten : public Cat
 		Kitten(std::string const type_);
 		Kitten(const Kitten &copy);
 		Kitten			&operator=(const Kitten &rhs);
-		virtual ~Kitten(void);
+		~Kitten(void);//virtual
 		
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;//virtual
 };
 
 #endif

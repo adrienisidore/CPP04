@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:18:51 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/17 12:01:43 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:44:32 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Dog : public Animal
 		Dog(std::string const type_);
 		Dog(const Dog &copy);
 		Dog	&operator=(const Dog &rhs);
-		virtual ~Dog(void);
+		~Dog(void);//virtual
 
-		virtual void makeSound(void) const;
+		void makeSound(void) const;//virtual
 };
 
 #endif

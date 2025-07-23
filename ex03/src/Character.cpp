@@ -6,11 +6,11 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:57:39 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/22 17:52:18 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:47:37 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "../Character.hpp"
 
 Character::Character(void)
 : _name("random Character")

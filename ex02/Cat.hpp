@@ -24,12 +24,12 @@ class Cat : public Animal
 		Cat(std::string const type_);
 		Cat(const Cat &copy);
 		Cat				&operator=(const Cat &rhs);
-		virtual ~Cat(void);
+		~Cat(void);
 
 		void			setIdea(int idx, std::string const &idea);
 		std::string		getIdea(int idx) const;
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 	private:
 		Brain*	_brain;
 };
