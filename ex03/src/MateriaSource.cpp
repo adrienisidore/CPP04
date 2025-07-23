@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:33:25 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/23 16:10:41 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:21:15 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	MateriaSource::learnMateria(AMateria *src)
 	for (int i = 0; i < 4; i++)
 	{
 		//Si la memoire de la MateriaSource le permet...
-		if (!this->_mem[i])
+		if (this->_mem[i] == NULL)
 		{
 			std::cout << "Materia " << src->getType()
 			<< " learned" << std::endl;

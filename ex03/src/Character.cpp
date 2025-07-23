@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:57:39 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/23 16:19:21 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:21:07 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	Character::equip(AMateria *m)
 	//On cherche la 1ere place disponible pour equiper
 	for (int i = 0; i < 4; i++)
 	{
-		if (!this->_inventory[i])
+		if (this->_inventory[i] == NULL)
 		{
 			this->_inventory[i] = m;
 			std::cout << "Materia " << m->getType()
@@ -113,17 +113,16 @@ void	Character::equip(AMateria *m)
 
 void	Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || this->_inventory[idx] == NULL)
 	{
 		std::cout << "Are you sure you're talking about the right position ?" << std::endl;
 		return;
 	}
-	|| !this->_inventory[idx]
 
 	//Je place la Materia a la 1ere position au sol trouve
 	for (int i = 0; i < 100; i++)
 	{
-		if (!this->_garbage[i])
+		if (this->_garbage[i] == NULL)
 		{
 			std::cout << "Materia " << this->_inventory[idx]->getType()
 			<< "is unequipped. Position " << idx + 1
@@ -140,7 +139,7 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter &target)
 {
-	if (!this->_inventory[idx] || idx < 0 || idx > 3)
+	if (this->_inventory[idx] == NULL || idx < 0 || idx > 3)
 		return ;
 	this->_inventory[idx]->use(target);
 }
