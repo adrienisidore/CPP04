@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:57:39 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/23 16:21:07 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 20:05:34 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,44 @@ std::string const	&Character::getName(void) const
 	return (this->_name);
 }
 
+void	Character::gotogarbage(AMateria **mm, int idx)
+{
+	//Je place la Materia a la 1ere position trouvee dans la poubelle
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->_garbage[i] == NULL)
+		{
+			std::cout << "Materia " << mm[idx]->getType()
+			<< " is dropped in the garbage." << std::endl;
+			//Copie de l'adresse "mm[idx]" dans "_garbage[i]" 
+			this->_garbage[i] = mm[idx];
+			//Je retire m de l'inventory (de sa position precedente)
+			mm[idx] = NULL;
+			return;
+		}
+	}
+	//La poubelle est pleine, la Materia est supprimee
+	delete mm[idx];
+}
+
+std::ostream& operator<<(std::ostream& os, const AMateria& materia)
+{
+    os << materia.getType(); // ou une autre info lisible
+    return os;
+}
+
+void	Character::display_inventory(void) const
+{
+	std::cout << "Now in the inventory you have :" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i])
+			std::cout << *(this->_inventory[i])  << std::endl;
+		else
+			std::cout << "[empty]" << std::endl;
+	}
+}
+
 void	Character::equip(AMateria *m)
 {
 	//On cherche la 1ere place disponible pour equiper
@@ -103,12 +141,14 @@ void	Character::equip(AMateria *m)
 			this->_inventory[i] = m;
 			std::cout << "Materia " << m->getType()
 			<< " is equipped in position " << i + 1 << std::endl;
+			this->display_inventory();
 			return;
 		}
 	}
 	std::cout << "Your inventory is full ! You can't equip this"
-	<< " Materia " << m->getType() << std::endl;
-	delete m;
+	<< " Materia " << m->getType() << "." << std::endl;
+	gotogarbage(&m, 0);
+	
 }
 
 void	Character::unequip(int idx)
@@ -118,23 +158,10 @@ void	Character::unequip(int idx)
 		std::cout << "Are you sure you're talking about the right position ?" << std::endl;
 		return;
 	}
-
-	//Je place la Materia a la 1ere position au sol trouve
-	for (int i = 0; i < 100; i++)
-	{
-		if (this->_garbage[i] == NULL)
-		{
-			std::cout << "Materia " << this->_inventory[idx]->getType()
-			<< "is unequipped. Position " << idx + 1
-			<< " in inventory is now empty" << std::endl;
-			//Copie de l'adresse "_inventory[idx]" dans "_garbage[i]" 
-			this->_garbage[i] = this->_inventory[idx];
-			//On desequipe la Materia sans la detruire
-			this->_inventory[idx] = NULL;
-			return;
-		}
-	}
-
+	this->gotogarbage(this->_inventory, idx);
+	std::cout << "Position " << idx << " in inventory is now empty" << std::endl;
+	this->display_inventory();
+	return;
 }
 
 void	Character::use(int idx, ICharacter &target)

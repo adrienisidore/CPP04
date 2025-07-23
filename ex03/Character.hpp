@@ -6,7 +6,7 @@
 /*   By: aisidore <aisidore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:46:45 by aisidore          #+#    #+#             */
-/*   Updated: 2025/07/23 16:14:07 by aisidore         ###   ########.fr       */
+/*   Updated: 2025/07/23 19:56:31 by aisidore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,13 @@ class Character : public ICharacter
 		~Character(void);
 
 		std::string const & getName() const;
+		void				gotogarbage(AMateria **mm, int idx);
+		void				display_inventory(void) const;
 		void				equip(AMateria* m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter& target);	
 };
+
+std::ostream& operator<<(std::ostream& os, const AMateria& materia);
 
 #endif
